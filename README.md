@@ -35,9 +35,7 @@
 │ (Обратна връзка) │ │ (MongoDB) │
 └───────────────────────┘ └───────────────────────┘
 ``` 
-
 ---
-```
 ## Технологичен стек
 
 ### Frontend
@@ -65,7 +63,6 @@
 - **ELK Stack** (Elasticsearch, Logstash, Kibana) – Логване и анализ
 
 ---
-
 ## Структура на проекта
 ```plaintext
 AI_Mental_Assistant_App/
@@ -113,7 +110,6 @@ AI_Mental_Assistant_App/
 ```
 
 ---
-
 ## Модели на база данни (MongoDB)
 
 ### Users
@@ -175,8 +171,8 @@ AI_Mental_Assistant_App/
   comments: String,
   createdAt: Date
 }
-```
-```
+``` 
+
 Environment променливи
 ```plaintext
 PORT=5000
