@@ -128,6 +128,16 @@ AI_Mental_Assistant_App/
   createdAt: Date,
   updatedAt: Date
 }
+### Users
+```javascript
+{
+  _id: ObjectId,
+  username: String,
+  email: String,
+  hashedPassword: String,
+  createdAt: Date,
+  updatedAt: Date
+}
  
  
 ### ChatSessions
