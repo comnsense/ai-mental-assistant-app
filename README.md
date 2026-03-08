@@ -129,13 +129,9 @@ AI_Mental_Assistant_App/
   updatedAt: Date
 }
 
+ ```
 
-
----
-
-## Модели на база данни (MongoDB)
-
-```### Users
+### Users
 
 ```javascript
 {
@@ -146,10 +142,9 @@ AI_Mental_Assistant_App/
   createdAt: Date,
   updatedAt: Date
 }
- 
- ----
+```
   
-```### ChatSessions
+### ChatSessions
 ```javascript
 {
   _id: ObjectId,
@@ -158,8 +153,9 @@ AI_Mental_Assistant_App/
   createdAt: Date,
   endedAt: Date
 }
+```
   
-```### Messages
+### Messages
 ```javascript
 {
   _id: ObjectId,
@@ -169,10 +165,10 @@ AI_Mental_Assistant_App/
   sentAt: Date,
   direction: String // 'user_to_ai', 'ai_to_user'
 }
- 
-```### Feedback
- ```javascript
+ ```
 
+ ### Feedback
+ ```javascript
 {
   _id: ObjectId,
   userId: ObjectId,
@@ -181,3 +177,4 @@ AI_Mental_Assistant_App/
   comments: String,
   createdAt: Date
 }
+```
