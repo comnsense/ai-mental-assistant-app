@@ -163,13 +163,12 @@ AI_Mental_Assistant_App/
   comments: String,
   createdAt: Date
 }
-
-```javascript
+ 
 
 ---
 
 Environment променливи
-```javascript 
+```text
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/mental_health_app
 JWT_SECRET=your_super_secret_jwt_key
