@@ -39,45 +39,31 @@
 -----------------
 
 # Технологичен стек
-Frontend
+  ## Frontend
 React.js – Библиотека за изграждане на потребителски интерфейс
-
 Socket.io-client – Двупосочна комуникация в реално време
-
 CSS/HTML5 – Стилизация и структура
 
-Backend
+  ## Backend
 Node.js – Сървърна среда за изпълнение
-
 Express.js – Web приложен фреймуърк
-
 Socket.io – WebSocket реализация за real-time комуникация
-
 JWT (JSON Web Tokens) – Автентикация
-
 bcrypt – Хеширане на пароли
 
-База данни
+  ## База данни
 MongoDB – NoSQL база данни
-
 Mongoose – ODM библиотека
 
-Изкуствен интелект
+  ## Изкуствен интелект
 OpenAI GPT – Генериране на персонализирани отговори
-
 TensorFlow/Keras – Разработка на NLP модели за анализ на емоции
-
 NLTK/SpaCy – Обработка на естествен език
-
 DevOps и инфраструктура
 Heroku – Облачно хостване и разгръщане
-
 GitHub Actions – CI/CD автоматизация
-
 Docker – Контейнеризация на услугите
-
 Prometheus + Grafana – Мониторинг на производителността
-
 ELK Stack (Elasticsearch, Logstash, Kibana) – Логване и анализ
 
 # Структура на проекта
