@@ -83,6 +83,7 @@ MongoDB Memory Server – Тестване с временна база данн
 Cypress – Автоматизирано тестване на потребителски сценарии
 
 # Структура на проекта
+plaintext
 AI_Mental_Assistant_App/
 │
 ├── client/                    # Frontend (React)
