@@ -164,7 +164,7 @@ AI_Mental_Assistant_App/
   createdAt: Date
 }
 
-
+```javascript
 
 ---
 
