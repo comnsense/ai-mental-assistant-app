@@ -83,7 +83,48 @@ MongoDB Memory Server – Тестване с временна база данн
 Cypress – Автоматизирано тестване на потребителски сценарии
 
 # Структура на проекта
-
+AI_Mental_Assistant_App/
+│
+├── client/                    # Frontend (React)
+│   ├── public/                # Статични файлове
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/        # React компоненти
+│   │   │   ├── ChatWindow.js  # Чат прозорец
+│   │   │   ├── LoginForm.js   # Форма за вход
+│   │   │   └── Settings.js    # Настройки
+│   │   ├── services/          # API интеграции
+│   │   │   └── socket.js      # Socket.io конфигурация
+│   │   ├── App.js             # Основен компонент
+│   │   └── index.js           # Входна точка
+│   └── package.json
+│
+├── server/                     # Backend (Node.js)
+│   ├── config/
+│   │   └── database.js         # MongoDB конфигурация
+│   ├── models/
+│   │   ├── User.js             # Потребителски модел
+│   │   ├── ChatSession.js      # Чат сесия модел
+│   │   ├── Message.js          # Съобщение модел
+│   │   └── Feedback.js         # Обратна връзка модел
+│   ├── routes/
+│   │   ├── auth.js             # Автентикация endpoints
+│   │   ├── chat.js             # Чат endpoints
+│   │   └── feedback.js         # Обратна връзка endpoints
+│   ├── services/
+│   │   ├── aiService.js        # OpenAI GPT интеграция
+│   │   └── emotionAnalysis.js  # Емоционален анализ
+│   ├── middleware/
+│   │   └── auth.js             # JWT валидация
+│   ├── app.js                  # Express конфигурация
+│   ├── server.js               # Сървър стартиране
+│   └── package.json
+│
+├── .env                         # Environment променливи
+├── .gitignore                   # Git игнорирани файлове
+├── docker-compose.yml           # Docker композиция
+├── README.md                    # Документация
+└── package.json                 # Основни зависимости
 
 
 
