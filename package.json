@@ -1,0 +1,33 @@
+{
+  "name": "ai-mental-assistant-app",
+  "version": "1.0.0",
+  "description": "AI Mental Assistant App for mental health support",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client",
+    "build": "cd client && npm run build",
+    "test": "concurrently \"cd server && npm test\" \"cd client && npm test\"",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "ai",
+    "mental-health",
+    "chatbot",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "Mirela Yosifova",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}

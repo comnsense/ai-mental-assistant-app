@@ -3,19 +3,27 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "axios": "^1.5.0",
-    "socket.io-client": "^4.7.2",
-    "react-chat-widget": "^3.1.4",
-    "react-emoji": "^0.5.0",
-    "@mui/material": "^5.14.5",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.5",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.0",
+    "date-fns": "^2.30.0",
+    "formik": "^2.4.3",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
-    "chart.js": "^4.4.0",
-    "react-chartjs-2": "^5.2.0"
+    "react-markdown": "^8.0.7",
+    "react-router-dom": "^6.15.0",
+    "react-scripts": "5.0.1",
+    "recharts": "^2.8.0",
+    "socket.io-client": "^4.7.2",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,8 +31,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "react-scripts": "5.0.1"
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
   },
   "browserslist": {
     "production": [

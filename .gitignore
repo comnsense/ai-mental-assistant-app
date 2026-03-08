@@ -1,0 +1,63 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Build
+dist/
+build/
+*.js.map
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Database
+*.db
+*.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Backend specific
+server/coverage/
+server/.env
+
+# Frontend specific
+client/build/
+client/.env
+client/.env.local
+
+# Temp files
+tmp/
+temp/

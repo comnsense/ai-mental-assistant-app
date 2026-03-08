@@ -1,40 +1,30 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const logger = require('../utils/logger');
 
 // Register
-router.post('/register', [
-  body('username').isLength({ min: 3 }).trim(),
-  body('email').isEmail().normalizeEmail(),
-  body('password').isLength({ min: 6 })
-], async (req, res) => {
+router.post('/register', async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     const { username, email, password } = req.body;
 
-    // Check if user exists
     const existingUser = await User.findOne({ $or: [{ email }, { username }] });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    // Create new user
+    const hashedPassword = await bcrypt.hash(password, 10);
+    
     const user = new User({
       username,
       email,
-      hashedPassword: password
+      hashedPassword
     });
 
     await user.save();
 
-    // Generate JWT
     const token = jwt.sign(
       { userId: user._id, username: user.username },
       process.env.JWT_SECRET,
@@ -42,13 +32,11 @@ router.post('/register', [
     );
 
     res.status(201).json({
-      message: 'User created successfully',
       token,
       user: {
         id: user._id,
         username: user.username,
-        email: user.email,
-        preferences: user.preferences
+        email: user.email
       }
     });
   } catch (error) {
@@ -58,31 +46,20 @@ router.post('/register', [
 });
 
 // Login
-router.post('/login', [
-  body('email').isEmail().normalizeEmail(),
-  body('password').notEmpty()
-], async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     const { email, password } = req.body;
 
-    // Find user
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    // Check password
-    const isValidPassword = await user.comparePassword(password);
+    const isValidPassword = await bcrypt.compare(password, user.hashedPassword);
     if (!isValidPassword) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    // Generate JWT
     const token = jwt.sign(
       { userId: user._id, username: user.username },
       process.env.JWT_SECRET,
@@ -90,39 +67,16 @@ router.post('/login', [
     );
 
     res.json({
-      message: 'Login successful',
       token,
       user: {
         id: user._id,
         username: user.username,
-        email: user.email,
-        preferences: user.preferences
+        email: user.email
       }
     });
   } catch (error) {
     logger.error('Login error:', error);
     res.status(500).json({ message: 'Server error' });
-  }
-});
-
-// Verify token
-router.get('/verify', async (req, res) => {
-  try {
-    const token = req.headers.authorization?.split(' ')[1];
-    if (!token) {
-      return res.status(401).json({ message: 'No token provided' });
-    }
-
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.userId).select('-hashedPassword');
-    
-    if (!user) {
-      return res.status(401).json({ message: 'User not found' });
-    }
-
-    res.json({ user });
-  } catch (error) {
-    res.status(401).json({ message: 'Invalid token' });
   }
 });
 
