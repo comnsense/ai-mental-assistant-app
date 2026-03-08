@@ -182,7 +182,8 @@ MONGODB_URI=mongodb://localhost:27017/ai_mental_assistant
 JWT_SECRET=your_jwt_secret_key_here
 OPENAI_API_KEY=your_openai_api_key_here
 CLIENT_URL=http://localhost:3000
-
+```
+---
 ## Автор
 Мирела Свиленова Йосифова
 Специалност: Информатика и компютърни науки
