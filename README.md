@@ -129,7 +129,7 @@ AI_Mental_Assistant_App/
   updatedAt: Date
 }
  
- ```text 
+ 
 ### ChatSessions
 ```javascript
 {
@@ -139,8 +139,7 @@ AI_Mental_Assistant_App/
   createdAt: Date,
   endedAt: Date
 }
-  
-```text 
+   
 ### Messages
 ```javascript
 {
@@ -152,7 +151,7 @@ AI_Mental_Assistant_App/
   direction: String // 'user_to_ai', 'ai_to_user'
 }
  
-```text
+ 
 ### Feedback
  ```javascript
 
@@ -165,6 +164,9 @@ AI_Mental_Assistant_App/
   createdAt: Date
 }
 
+
+
+---
 
 Environment променливи
 
