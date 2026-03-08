@@ -34,10 +34,10 @@
 │ Feedback Service │ │ Data Service │
 │ (Обратна връзка) │ │ (MongoDB) │
 └───────────────────────┘ └───────────────────────┘
-```text
+``` 
 
 ---
-
+```
 ## Технологичен стек
 
 ### Frontend
@@ -184,8 +184,8 @@ MONGODB_URI=mongodb://localhost:27017/mental_health_app
 JWT_SECRET=your_super_secret_jwt_key
 OPENAI_API_KEY=your_openai_api_key
 NODE_ENV=development
-```text 
- ```
+```  
+ 
 ---
  
  ## Сигурност
