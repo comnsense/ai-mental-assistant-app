@@ -130,4 +130,54 @@ AI_Mental_Assistant_App/
 }
 
 
+
 ---
+
+## Модели на база данни (MongoDB)
+
+```### Users
+
+```javascript
+{
+  _id: ObjectId,
+  username: String,
+  email: String,
+  hashedPassword: String,
+  createdAt: Date,
+  updatedAt: Date
+}
+ 
+ ----
+  
+```### ChatSessions
+```javascript
+{
+  _id: ObjectId,
+  userId: ObjectId,
+  status: String, // 'active', 'ended'
+  createdAt: Date,
+  endedAt: Date
+}
+  
+```### Messages
+```javascript
+{
+  _id: ObjectId,
+  chatSessionId: ObjectId,
+  userId: ObjectId,
+  messageText: String,
+  sentAt: Date,
+  direction: String // 'user_to_ai', 'ai_to_user'
+}
+ 
+```### Feedback
+ ```javascript
+
+{
+  _id: ObjectId,
+  userId: ObjectId,
+  chatSessionId: ObjectId,
+  rating: Number, // 1-5
+  comments: String,
+  createdAt: Date
+}
